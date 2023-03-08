@@ -119,13 +119,14 @@
             <td>{{ ++$i }}</td>
             <td>{{ $item->name }}</td>
             <td>{{ $item->position }}</td>
-            <td><a  href="{{ url('updateNome', ['id' => $item->id]) }}" class='btn btn-light' role='button' aria-disabled='true'>Alterar Nome</a></td>
+          
+            <td><a  href="{{ url('updateNome', ['id' => Crypt::encrypt($item->id)]) }}" class='btn btn-light' role='button' aria-disabled='true'>Alterar Nome</a></td> 
+
         </tr>
         @endforeach
 
 </table>
 </div>
-
 
 
 <!-- Footer -->
