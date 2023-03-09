@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UpdateController;
+use App\Http\Controllers\changeController;
+
 
 
 
@@ -24,7 +26,19 @@ Route::get('updateNome/{id}/', function () {
 */
 
 
+
 Route::get('updateNome/{id}', [UpdateController::class, 'index']); 
+
+/*
+Route::get('vnome/{id}', [changeController::class, 'index']); 
+*/
+
+
+Route::get('vnome', [changeController::class, 'index']); 
+
+
+
+
 
 /*
 Route::get('checklistpdf/{id}', [ChecklistControllerPDF::class, 'index']); 

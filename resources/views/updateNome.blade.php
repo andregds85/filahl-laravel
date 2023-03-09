@@ -101,19 +101,15 @@
 <br>
 <br>
 <div class="container">
-<form>
-
-
-
-
+<form action="{{ url('vnome') }}" method="GET">
 
   <div class="form-group">
     <label for="exampleInputEmail1">ID</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value=<?php echo $id1=Crypt::decrypt($id); ?> placeholder="id" readonly>
+    <input type="text" name="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value=<?php echo $id1=Crypt::decrypt($id); ?> placeholder="id" readonly>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Nome</label>
-    <input type="text" class="form-control" id="nome" placeholder="Digite o Nome">
+    <input type="text" name="nome" class="form-control" id="nome" placeholder="Digite o Nome">
   </div>
   <button type="submit" class="btn btn-primary">Alterar Nome</button>
 </form>
