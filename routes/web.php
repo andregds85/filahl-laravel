@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UpdateController;
 use App\Http\Controllers\changeController;
-
+use App\Http\Controllers\AtualizaFilaController;
+use App\Http\Controllers\VgobackController;
 
 
 
@@ -18,28 +19,16 @@ Route::get('/alterarNome', function () {
 });
 
 
-/*
-Route::get('updateNome/{id}/', function () {
-    return view('updateNome/{id}/');
+Route::get('/voltar', function () {
+    return view('voltarFila');
 });
-
-*/
-
-
 
 Route::get('updateNome/{id}', [UpdateController::class, 'index']); 
 
-/*
-Route::get('vnome/{id}', [changeController::class, 'index']); 
-*/
-
 
 Route::get('vnome', [changeController::class, 'index']); 
+Route::get('vfila/{id}', [AtualizaFilaController::class, 'index']); 
+Route::get('vgoback/{id}', [VgobackController::class, 'index']); 
 
 
 
-
-
-/*
-Route::get('checklistpdf/{id}', [ChecklistControllerPDF::class, 'index']); 
-*/

@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fila HL</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
 </head>
 <body>
 
@@ -29,7 +31,7 @@
       
       
       <li class="nav-item">
-        <a class="nav-link" href="{{ url('/voltar') }}">Voltar para a Fila </a>
+        <a class="nav-link" href="fila.php">Voltar para a Fila </a>
       </li>
       
     </ul>
@@ -73,7 +75,7 @@
       <h5 class="card-title">Voltar para a fila </h5>
       <p class="card-text">Volta para a Fila </p>
       <p class="card-text"><small class="text-muted">
-      <a href="{{ url('/voltar') }}" class="btn btn-light" role="button" aria-disabled="true">Prosseguir</a>
+      <a href="fila.php" class="btn btn-light" role="button" aria-disabled="true">Prosseguir</a>
       </small></p>
     </div>
   </div>
@@ -92,8 +94,10 @@
 <?php
     use App\Models\Carros;
     $tabela = carros::all();
-    $tabela1= $tabela=carros::orderBy('position', 'asc')->get();
+    $tabela1= $tabela=carros::where('position', '100')->get();
     $i=0;
+    $total = Carros::latest()->value('position');
+
 ?>
 
 <div class="container">
@@ -109,16 +113,50 @@
 
     </tr>
   </thead>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<div class="container">
+<div class="card-deck">
+  
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Último da Fila : <?php echo $total; ?></h5>
+      <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
 
 
+<script>
+var xValues = ["ltimo da Fila "];
+var yValues = ['<?php echo $total; ?>'];
+var barColors = [
+  "#2b5797",
+  "#e8c3b9",
+  "#1e7145"
+];
+
+new Chart("myChart", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Ultimo da Fila"
+    }
+  }
+});
+</script>
+
+  
   @foreach($tabela1 as $item)
 	    <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $item->name }}</td>
             <td>{{ $item->position }}</td>
-            <td><a  href="{{ url('vfila', ['id' => Crypt::encrypt($item->id)]) }}" class='btn btn-light' role='button' aria-disabled='true'>Prosseguir para Viagem</a></td> 
-
-
+            <td><a  href="{{ url('vgoback', ['id' => Crypt::encrypt($item->id)]) }}" class='btn btn-light' role='button' aria-disabled='true'>Voltar para a Fila</a></td> 
         </tr>
         @endforeach
 

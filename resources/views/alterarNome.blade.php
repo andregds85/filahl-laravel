@@ -43,7 +43,6 @@
 <div class="container">
 <div class="card-deck">
   
-
 <div class="card">
     <img class="card-img-top" src="img2.jpg" alt="Card image cap" width="30%" heidth="30%">
     <div class="card-body">
