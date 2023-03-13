@@ -15,23 +15,25 @@
 
 <div class="container">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="http://filahl.rf.gd">
+  <a class="navbar-brand" href="{{ url('/') }}">
       <img src="img2.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
     FILA HL</a>
           <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       
+    
       <li class="nav-item">
         <a class="nav-link" href="{{ url('/') }}">Inicio </a>
       </li>  
       
+
       <li class="nav-item">
         <a class="nav-link" href="{{ url('/alterarNome') }}">Alterar Nome </a>
       </li>
       
       
       <li class="nav-item">
-        <a class="nav-link" href="fila.php">Voltar para a Fila </a>
+      <a class="nav-link" href="{{ url('/voltar') }}">Alterar Nome </a>
       </li>
       
     </ul>
@@ -75,7 +77,7 @@
       <h5 class="card-title">Voltar para a fila </h5>
       <p class="card-text">Volta para a Fila </p>
       <p class="card-text"><small class="text-muted">
-      <a href="fila.php" class="btn btn-light" role="button" aria-disabled="true">Prosseguir</a>
+      <a href="{{ url('/voltar') }}" class="btn btn-light" role="button" aria-disabled="true">Prosseguir</a>
       </small></p>
     </div>
   </div>
@@ -91,12 +93,16 @@
 </div>
 </div>
 
+
 <?php
+
     use App\Models\Carros;
     $tabela = carros::all();
     $tabela1= $tabela=carros::where('position', '100')->get();
     $i=0;
-    $total = Carros::latest()->value('position');
+    $total = carros::where('position', '<', 100)->count(); 
+    $ultimo = carros::where('position', '<', 100)->max('position');
+    $fora = carros::where('position', 100)->count();
 
 ?>
 
@@ -113,44 +119,46 @@
 
     </tr>
   </thead>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-<div class="container">
-<div class="card-deck">
-  
-<div class="card">
-    <div class="card-body">
-      <h5 class="card-title">Último da Fila : <?php echo $total; ?></h5>
-      <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
 
 
-<script>
-var xValues = ["ltimo da Fila "];
-var yValues = ['<?php echo $total; ?>'];
-var barColors = [
-  "#2b5797",
-  "#e8c3b9",
-  "#1e7145"
-];
 
-new Chart("myChart", {
-  type: "pie",
-  data: {
-    labels: xValues,
-    datasets: [{
-      backgroundColor: barColors,
-      data: yValues
-    }]
-  },
-  options: {
-    title: {
-      display: true,
-      text: "Ultimo da Fila"
-    }
-  }
-});
-</script>
 
-  
+
+  <html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Carros na Fila',     <?php echo $total; ?>],
+          ['Último Lugar',     <?php echo $ultimo; ?>],
+          ['Fora da Fila',     <?php echo $fora; ?>],
+
+        ]);
+        var options = {
+          title: 'Relatório',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
+</div>
+</div>
+</div>
+</div>
+
+
+
   @foreach($tabela1 as $item)
 	    <tr>
             <td>{{ ++$i }}</td>

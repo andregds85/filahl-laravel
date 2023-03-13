@@ -14,7 +14,7 @@
 
 <div class="container">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="http://filahl.rf.gd">
+  <a class="navbar-brand" href="{{ url('/') }}">
       <img src="img2.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
     FILA HL</a>
           <div class="collapse navbar-collapse" id="navbarNav">
@@ -30,10 +30,9 @@
       
       
       <li class="nav-item">
-        <a class="nav-link" href="fila.php">Voltar para a Fila </a>
+      <a class="nav-link" href="{{ url('/voltar') }}">Alterar Nome </a>
       </li>
-      
-    </ul>
+     </ul>
   </div>
 
   </nav>
@@ -74,7 +73,7 @@
       <h5 class="card-title">Voltar para a fila </h5>
       <p class="card-text">Volta para a Fila </p>
       <p class="card-text"><small class="text-muted">
-      <a href="fila.php" class="btn btn-light" role="button" aria-disabled="true">Prosseguir</a>
+      <a href="{{ url('/voltar') }}" class="btn btn-light" role="button" aria-disabled="true">Prosseguir</a>
       </small></p>
     </div>
   </div>
