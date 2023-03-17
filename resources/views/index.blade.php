@@ -24,7 +24,7 @@
       </li>  
       
       <li class="nav-item">
-        <a class="nav-link" href="{{ url('/alterarNome') }}">Alterar Nome </a>
+        <a class="nav-link" href="{{ url('/alterarNome') }}">Alterar Dados </a>
       </li>
             
       <li class="nav-item">
@@ -46,7 +46,7 @@
     <img class="card-img-top" src="img2.jpg" alt="Card image cap" width="30%" heidth="30%">
     <div class="card-body">
       <h5 class="card-title">Inicio</h5>
-      <p class="card-text">Deloca-se para a Página Inicial</p>
+      <p class="card-text">Desloca-se para a Página Inicial</p>
       <p class="card-text"><small class="text-muted">
       <a href="{{ url('/') }}" class="btn btn-light" role="button" aria-disabled="true">Prosseguir</a>
       </small></p>
@@ -57,7 +57,7 @@
   <div class="card">
   <img class="card-img-top" src="img2.jpg" alt="Card image cap" width="30%" heidth="30%">
     <div class="card-body">
-      <h5 class="card-title">Alterar nome</h5>
+      <h5 class="card-title">Alterar Dados</h5>
       <p class="card-text">Altera o nome do Carro</p>
       <p class="card-text"><small class="text-muted">
       <a href="{{ url('/alterarNome') }}" class="btn btn-light" role="button" aria-disabled="true">Prosseguir</a>
@@ -83,7 +83,7 @@
 <div class="card">
   <div class="card-body">
     Download do APP para Android.
-  <a href="app/carro.apk">Baixar</a>
+  <a href="https://hercilioluz.cerintersc.com.br/app/carros.apk">Baixar</a>
  </div>
 </div>
 </div>
@@ -92,30 +92,30 @@
     use App\Models\Carros;
     $tabela = carros::all();
     $tabela1= $tabela=carros::orderBy('position', 'asc')->get();
+    $tabela2= $tabela1=carros::where('position','<','100000')->get();
+
     $i=0;
 ?>
 
 <div class="container">
-<div class="table-responsive-sm">
-  <table class="table">
+  <table  class="table table-striped">
 
   <thead>
     <tr>
       <th scope="col">Posição</th>
       <th scope="col">Carros</th>
-      <th scope="col">Números</th>
       <th scope="col">Ação</th>
 
     </tr>
   </thead>
 
 
-  @foreach($tabela1 as $item)
+  @foreach($tabela2 as $item)
 	    <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $item->name }}</td>
-            <td>{{ $item->position }}</td>
-            <td><a  href="{{ url('vfila', ['id' => Crypt::encrypt($item->id)]) }}" class='btn btn-light' role='button' aria-disabled='true'>Prosseguir para Viagem</a></td> 
+            <td>{{ $item->position }}
+            <a  href="{{ url('vfila', ['id' => Crypt::encrypt($item->id)]) }}" class='btn btn-light' role='button' aria-disabled='true'>Prosseg Viagem</a></td> 
 
 
         </tr>

@@ -4,7 +4,7 @@ $id1=Crypt::decrypt($id);
 
 /* pega a ultima posição */ 
 $maxValue = Carros::latest()->value('position');
-$ultimo = carros::where('position', '<', 100)->max('position');
+$ultimo = carros::where('position', '<', 100000)->max('position');
 
 $position=$ultimo+1;
 Carros::where('id', $id1)->update(['position' => $position]);

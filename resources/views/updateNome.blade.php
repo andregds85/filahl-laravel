@@ -25,12 +25,11 @@
       </li>  
       
       <li class="nav-item">
-        <a class="nav-link" href="{{ url('/alterarNome') }}">Alterar Nome </a>
+        <a class="nav-link" href="{{ url('/alterarNome') }}">Alterar Dados </a>
       </li>
       
-      
       <li class="nav-item">
-        <a class="nav-link" href="fila.php">Voltar para a Fila </a>
+        <a class="nav-link" href="{{ url('/voltar') }}">Voltar para a Fila </a>
       </li>
       
     </ul>
@@ -59,7 +58,7 @@
   <div class="card">
   <img class="card-img-top" src="../img2.jpg" alt="Card image cap" width="30%" heidth="30%">
     <div class="card-body">
-      <h5 class="card-title">Alterar nome</h5>
+      <h5 class="card-title">Alterar Dados</h5>
       <p class="card-text">Altera o nome do Carro</p>
       <p class="card-text"><small class="text-muted">
       <a href="{{ url('/alterarNome') }}" class="btn btn-light" role="button" aria-disabled="true">Prosseguir</a>
@@ -75,7 +74,7 @@
       <h5 class="card-title">Voltar para a fila </h5>
       <p class="card-text">Volta para a Fila </p>
       <p class="card-text"><small class="text-muted">
-      <a href="fila.php" class="btn btn-light" role="button" aria-disabled="true">Prosseguir</a>
+      <a href="{{ url('/voltar') }}" class="btn btn-light" role="button" aria-disabled="true">Prosseguir</a>
       </small></p>
     </div>
   </div>
@@ -87,7 +86,7 @@
 <div class="card">
   <div class="card-body">
     Download do APP para Android.
-  <a href="app/carro.apk">Baixar</a>
+    <a href="https://hercilioluz.cerintersc.com.br/app/carros.apk">Baixar</a>
  </div>
 </div>
 </div>
@@ -111,27 +110,17 @@
     <label for="exampleInputPassword1">Nome</label>
     <input type="text" name="nome" class="form-control" id="nome" placeholder="Digite o Nome">
   </div>
-  <button type="submit" class="btn btn-primary">Alterar Nome</button>
+
+  <div class="form-group">
+    <label for="exampleInputPassword1">Números</label>
+    <input type="text" name="position" class="form-control" id="position" placeholder="Digite o Numero">
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Alterar dados</button>
 </form>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
