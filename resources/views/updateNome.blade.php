@@ -15,7 +15,6 @@
 <div class="container">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="http://filahl.rf.gd">
-      <img src="../img2.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
     FILA HL</a>
           <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
@@ -44,7 +43,6 @@
   
 
 <div class="card">
-    <img class="card-img-top" src="../img2.jpg" alt="Card image cap" width="30%" heidth="30%">
     <div class="card-body">
       <h5 class="card-title">Inicio</h5>
       <p class="card-text">Deloca-se para a Página Inicial</p>
@@ -56,7 +54,6 @@
   
   
   <div class="card">
-  <img class="card-img-top" src="../img2.jpg" alt="Card image cap" width="30%" heidth="30%">
     <div class="card-body">
       <h5 class="card-title">Alterar Dados</h5>
       <p class="card-text">Altera o nome do Carro</p>
@@ -69,7 +66,6 @@
 
  
   <div class="card">
-  <img class="card-img-top" src="../img2.jpg" alt="Card image cap" width="30%" heidth="30%">
     <div class="card-body">
       <h5 class="card-title">Voltar para a fila </h5>
       <p class="card-text">Volta para a Fila </p>

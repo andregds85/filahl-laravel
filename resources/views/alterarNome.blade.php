@@ -43,7 +43,6 @@
 <div class="card-deck">
   
 <div class="card">
-    <img class="card-img-top" src="img2.jpg" alt="Card image cap" width="30%" heidth="30%">
     <div class="card-body">
       <h5 class="card-title">Inicio</h5>
       <p class="card-text">Deloca-se para a Página Inicial</p>
@@ -55,7 +54,6 @@
   
   
   <div class="card">
-  <img class="card-img-top" src="img2.jpg" alt="Card image cap" width="30%" heidth="30%">
     <div class="card-body">
       <h5 class="card-title">Alterar Dados</h5>
       <p class="card-text">Altera o nome do Carro</p>
@@ -68,7 +66,6 @@
 
  
   <div class="card">
-  <img class="card-img-top" src="img2.jpg" alt="Card image cap" width="30%" heidth="30%">
     <div class="card-body">
       <h5 class="card-title">Voltar para a fila </h5>
       <p class="card-text">Volta para a Fila </p>

@@ -43,7 +43,6 @@
   
 
 <div class="card">
-    <img class="card-img-top" src="img2.jpg" alt="Card image cap" width="30%" heidth="30%">
     <div class="card-body">
       <h5 class="card-title">Inicio</h5>
       <p class="card-text">Desloca-se para a Página Inicial</p>
@@ -55,7 +54,6 @@
   
   
   <div class="card">
-  <img class="card-img-top" src="img2.jpg" alt="Card image cap" width="30%" heidth="30%">
     <div class="card-body">
       <h5 class="card-title">Alterar Dados</h5>
       <p class="card-text">Altera o nome do Carro</p>
@@ -67,7 +65,6 @@
 
  
   <div class="card">
-  <img class="card-img-top" src="img2.jpg" alt="Card image cap" width="30%" heidth="30%">
     <div class="card-body">
       <h5 class="card-title">Voltar para a fila </h5>
       <p class="card-text">Volta para a Fila </p>
@@ -92,10 +89,21 @@
     use App\Models\Carros;
     $tabela = carros::all();
     $tabela1= $tabela=carros::orderBy('position', 'asc')->get();
-    $tabela2= $tabela1=carros::where('position','<','100000')->get();
+    $tabela2= $tabela1=carros::where('position','<','100000')->orderBy('position', 'asc')->get();
+
 
     $i=0;
 ?>
+
+
+
+
+
+
+
+
+
+
 
 <div class="container">
   <table  class="table table-striped">

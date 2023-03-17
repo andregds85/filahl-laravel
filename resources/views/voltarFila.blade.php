@@ -49,7 +49,6 @@
   
 
 <div class="card">
-    <img class="card-img-top" src="img2.jpg" alt="Card image cap" width="30%" heidth="30%">
     <div class="card-body">
       <h5 class="card-title">Inicio</h5>
       <p class="card-text">Deloca-se para a Página Inicial</p>
@@ -61,7 +60,6 @@
   
   
   <div class="card">
-  <img class="card-img-top" src="img2.jpg" alt="Card image cap" width="30%" heidth="30%">
     <div class="card-body">
       <h5 class="card-title">Alterar dados</h5>
       <p class="card-text">Altera o nome do Carro</p>
@@ -73,7 +71,6 @@
 
  
   <div class="card">
-  <img class="card-img-top" src="img2.jpg" alt="Card image cap" width="30%" heidth="30%">
     <div class="card-body">
       <h5 class="card-title">Voltar para a fila </h5>
       <p class="card-text">Volta para a Fila </p>
@@ -90,16 +87,19 @@
   <div class="card-body">
     Download do APP para Android.
     <a href="https://hercilioluz.cerintersc.com.br/app/carros.apk">Baixar</a>
+    
  </div>
 </div>
 </div>
+
 
 
 <?php
 
     use App\Models\Carros;
     $tabela = carros::all();
-    $tabela1= $tabela=carros::where('position', '100000')->get();
+    $tabela1= $tabela=carros::where('position', '100000')->orderBy('name', 'asc')->get();
+
     $i=0;
     $total = carros::where('position', '<', 100000)->count(); 
     $ultimo = carros::where('position', '<', 100000)->max('position');
@@ -114,14 +114,10 @@
     <tr>
       <th scope="col">Posição</th>
       <th scope="col">Carros</th>
-      <th scope="col">Ação</th>
-
+      <th scope="col"><button onClick="window.location.reload();">Atualizar</button>
+</th>
     </tr>
   </thead>
-
-
-
-
 
 
 
