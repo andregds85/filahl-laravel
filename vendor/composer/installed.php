@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'd42c0708943bd196adbc902f8aab15624717c2cd',
+    'reference' => '4308322a14d06fbf97938b968356af6665aa5d41',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -445,7 +445,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'd42c0708943bd196adbc902f8aab15624717c2cd',
+      'reference' => '4308322a14d06fbf97938b968356af6665aa5d41',
     ),
     'laravel/serializable-closure' => 
     array (
@@ -464,6 +464,15 @@
       array (
       ),
       'reference' => '04a2d3bd0d650c0764f70bf49d1ee39393e4eb10',
+    ),
+    'laravel/ui' => 
+    array (
+      'pretty_version' => 'v3.4.6',
+      'version' => '3.4.6.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '65ec5c03f7fee2c8ecae785795b829a15be48c2c',
     ),
     'league/commonmark' => 
     array (
@@ -500,6 +509,15 @@
       array (
       ),
       'reference' => 'ff6248ea87a9f116e78edd6002e39e5128a0d4dd',
+    ),
+    'lucascudo/laravel-pt-br-localization' => 
+    array (
+      'pretty_version' => 'v1.2.5',
+      'version' => '1.2.5.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'a22e2f150648813875b842b5a0608542ea9380a6',
     ),
     'mockery/mockery' => 
     array (

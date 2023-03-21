@@ -1,3 +1,8 @@
+
+@section('content')
+
+
+
 <?php
  $id=$_GET['id'];
  $nome=$_GET['nome'];
@@ -17,6 +22,7 @@
 echo redirect('/')
 ?>    
 
+@endsection
 
 
 

@@ -5,8 +5,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fila HL</title>
+    <title>Aeroporto</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 </head>
 <body>
 
@@ -15,22 +16,22 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="{{ url('/') }}">
       <img src="img2.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
-    FILA HL</a>
+   Aeroporto</a>
           <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       
       <li class="nav-item">
-        <a class="nav-link" href="{{ url('/') }}">Inicio </a>
+        <a class="nav-link" href="{{ url('/') }}">Fila </a>
       </li>  
       
       <li class="nav-item">
-        <a class="nav-link" href="{{ url('/alterarNome') }}">Alterar Dados </a>
+        <a class="nav-link" href="{{ url('/login') }}">Login </a>
       </li>
             
       <li class="nav-item">
-        <a class="nav-link" href="{{ url('/voltar') }}">Voltar para a Fila </a>
+        <a class="nav-link" href="{{ url('/voltar') }}">Fora da Fila </a>
       </li>
-      
+
     </ul>
   </div>
 
@@ -44,8 +45,7 @@
 
 <div class="card">
     <div class="card-body">
-      <h5 class="card-title">Inicio</h5>
-      <p class="card-text">Desloca-se para a Página Inicial</p>
+      <h5 class="card-title">Fila</h5>
       <p class="card-text"><small class="text-muted">
       <a href="{{ url('/') }}" class="btn btn-light" role="button" aria-disabled="true">Prosseguir</a>
       </small></p>
@@ -55,10 +55,10 @@
   
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">Alterar Dados</h5>
-      <p class="card-text">Altera o nome do Carro</p>
+      <h5 class="card-title">Login</h5>
       <p class="card-text"><small class="text-muted">
-      <a href="{{ url('/alterarNome') }}" class="btn btn-light" role="button" aria-disabled="true">Prosseguir</a>
+      <a href="{{ url('/login') }}" class="btn btn-light" role="button" aria-disabled="true">Prosseguir</a>
+      
       </small></p>
     </div>
   </div>
@@ -66,8 +66,7 @@
  
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">Voltar para a fila </h5>
-      <p class="card-text">Volta para a Fila </p>
+      <h5 class="card-title">Fora da Fila </h5>
       <p class="card-text"><small class="text-muted">
       <a href="{{ url('/voltar') }}" class="btn btn-light" role="button" aria-disabled="true">Prosseguir</a>
       </small></p>
@@ -90,17 +89,8 @@
     $tabela = carros::all();
     $tabela1= $tabela=carros::orderBy('position', 'asc')->get();
     $tabela2= $tabela1=carros::where('position','<','100000')->orderBy('position', 'asc')->get();
-
-
     $i=0;
 ?>
-
-
-
-
-
-
-
 
 
 
@@ -113,7 +103,6 @@
       <th scope="col">Posição</th>
       <th scope="col">Carros</th>
       <th scope="col">Ação</th>
-
     </tr>
   </thead>
 
@@ -123,8 +112,7 @@
             <td>{{ ++$i }}</td>
             <td>{{ $item->name }}</td>
             <td>{{ $item->position }}
-            <a  href="{{ url('vfila', ['id' => Crypt::encrypt($item->id)]) }}" class='btn btn-light' role='button' aria-disabled='true'>Prosseg Viagem</a></td> 
-
+            <a  href="{{ url('vfila', ['id' => Crypt::encrypt($item->id)]) }}" class='btn btn-light'  onclick='mensagem()' role='button' aria-disabled='true'>Prosseg Viagem</a></td> 
 
         </tr>
         @endforeach

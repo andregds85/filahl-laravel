@@ -11,7 +11,6 @@
 <body>
 
 
-
 <div class="container">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="{{ url('/') }}">
@@ -20,15 +19,16 @@
           <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       
+    
       <li class="nav-item">
         <a class="nav-link" href="{{ url('/') }}">Inicio </a>
       </li>  
+     
       
       <li class="nav-item">
         <a class="nav-link" href="{{ url('/alterarNome') }}">Alterar Dados </a>
       </li>
-      
-      
+           
       <li class="nav-item">
       <a class="nav-link" href="{{ url('/voltar') }}">Voltar para Fila </a>
       </li>
@@ -63,8 +63,7 @@
     </div>
   </div>
 
-
- 
+  
   <div class="card">
     <div class="card-body">
       <h5 class="card-title">Voltar para a fila </h5>

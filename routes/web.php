@@ -24,11 +24,15 @@ Route::get('/voltar', function () {
 });
 
 Route::get('updateNome/{id}', [UpdateController::class, 'index']); 
-
-
-Route::get('vnome', [changeController::class, 'index']); 
 Route::get('vfila/{id}', [AtualizaFilaController::class, 'index']); 
 Route::get('vgoback/{id}', [VgobackController::class, 'index']); 
 
 
 
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['middleware' => ['auth']], function() {
+Route::get('vnome', [changeController::class, 'index']); 
+});
