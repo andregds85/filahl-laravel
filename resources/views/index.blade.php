@@ -1,3 +1,9 @@
+<?php
+session_start();
+session_destroy();
+?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -52,7 +58,7 @@
     </div>
   </div>
   
-  
+ 
   <div class="card">
     <div class="card-body">
       <h5 class="card-title">Login</h5>
@@ -62,7 +68,6 @@
       </small></p>
     </div>
   </div>
-
  
   <div class="card">
     <div class="card-body">
@@ -93,8 +98,6 @@
 ?>
 
 
-
-
 <div class="container">
   <table  class="table table-striped">
 
@@ -112,7 +115,7 @@
             <td>{{ ++$i }}</td>
             <td>{{ $item->name }}</td>
             <td>{{ $item->position }}
-            <a  href="{{ url('vfila', ['id' => Crypt::encrypt($item->id)]) }}" class='btn btn-light'  onclick='mensagem()' role='button' aria-disabled='true'>Prosseg Viagem</a></td> 
+            <a  href="{{ url('vfila', ['id' => Crypt::encrypt($item->id)]) }}" class='btn btn-light'  role='button' aria-disabled='true'>Prosseg Viagem</a></td> 
 
         </tr>
         @endforeach

@@ -12,6 +12,7 @@ class AtualizaFilaController extends Controller
   public function index($id)
   {
    return view('atualiza',['id'=>$id]);
+
   }
 
 }
