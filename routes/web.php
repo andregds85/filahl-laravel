@@ -24,9 +24,20 @@ Route::get('/voltar', function () {
     return view('voltarFila');
 });
 
+
+
+Route::get('/vgobackconfirma', function () {
+    return view('vgobackconfirma');
+});
+
+
+
+
+
 Route::get('updateNome/{id}', [UpdateController::class, 'index']); 
 Route::get('vfila/{id}', [AtualizaFilaController::class, 'index']); 
 Route::get('vgoback/{id}', [VgobackController::class, 'index']); 
+
 Route::get('/validafila', function () {
     return view('validafila');
 });

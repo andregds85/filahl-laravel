@@ -2,30 +2,52 @@
 use App\Models\Carros;
 $id1=Crypt::decrypt($id);
 
-
-/* pega a ultima posição */ 
-
-$maxValue = Carros::latest()->value('position');
-$ultimo = carros::where('position', '<', 100000)->max('position');
-
-$position=$ultimo+1;
-Carros::where('id', $id1)->update(['position' => $position]);
-
+session_start();
+$_SESSION['id']=$id1;
 
 ?>
 
-<script>  alert("Voltei para Fila na última Posição"); </script>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aeroporto</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+
+<div class="container">
+<div class="card-deck">
+  
+
+<div class="container">
+<div class="card">
+  <div class="card-header">
+    SIM
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">SIM TENHO CERTEZA, VOU VOLTAR PARA A FILA  </h5>
+    <a href="{{ url('/vgobackconfirma') }}" class="btn btn-primary">SIM</a>
+  </div>
+</div>
 
 
-<?php 
 
-echo redirect('/')
+<div class="card">
+  <div class="card-header">
+    NÃO
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">NÃO!,  VOU CONTINUAR FORA DA FILA</h5>
+    <a href="{{ url('/voltar') }}" class="btn btn-primary">NÃO</a>
+  </div>
+</div>
+</div>
 
-
-?>    
-
-
-    
 
 
 

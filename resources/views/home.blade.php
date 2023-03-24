@@ -5,7 +5,15 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Área Restrita') }}</div>
+                <div class="card-header">{{ __('Área Restrita') }}
+                <br> 
+
+                <a class="nav-link" href="{{ url('/register') }}">Criar um novo usuário </a>
+
+
+
+
+                </div>
 
                 <div class="card-body">
                     @if (session('status'))

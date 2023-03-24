@@ -111,17 +111,61 @@ session_destroy();
 
 
   @foreach($tabela2 as $item)
-	    <tr>
-            <td>{{ ++$i }}</td>
+	    <tr> 
+     <?php $color=++$i; ?>  
+ 
+               <?php if ($color < 6 ){
+              ?>    
+              <td bgcolor="green"> <font color="white"> <?php echo $color; ?>  </font></td>  <?php
+
+                } 
+
+
+
+                 if (($color > 5 ) and ($color < 8 )){
+                  ?>    
+                  <td bgcolor="yellow"><font color="black"> <?php echo $color; ?>  </font></td> <?php
+    
+                    } 
+
+
+                    if (($color > 7 ) and ($color < 13 )){
+                      ?>    
+                      <td bgcolor="blue"><font color="white"> <?php echo $color; ?>  </font></td> <?php
+        
+                        } 
+                        
+
+                        if ($color > 12 ) {
+                          ?>    
+                          <td>  <?php echo $color; ?>  </td> <?php
+            
+                            } 
+
+
+
+
+
+                  ?>
             <td>{{ $item->name }}</td>
             <td>{{ $item->position }}
             <a  href="{{ url('vfila', ['id' => Crypt::encrypt($item->id)]) }}" class='btn btn-light'  role='button' aria-disabled='true'>Prosseg Viagem</a></td> 
-
         </tr>
+
+
+
+
+
+
+
+
+
+
         @endforeach
 
-</table>
+        </table>
 </div>
+
 
 
 

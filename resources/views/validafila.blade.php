@@ -18,8 +18,6 @@ Carros::where('id', $id1)->update(['position' => $position]);
 
 
 <?php  
-
 echo redirect('/')  
-
 ?>    
 
