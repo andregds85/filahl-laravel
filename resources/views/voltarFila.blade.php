@@ -117,7 +117,7 @@
             <td>{{ ++$i }}</td>
             <td>{{ $item->name }}</td>
             <td>{{ $item->position }}
-            <a  href="{{ url('vgoback', ['id' => Crypt::encrypt($item->id)]) }}" class='btn btn-light' role='button' aria-disabled='true'>Voltar</a></td> 
+            <a  href="{{ url('vgoback', ['id' => Crypt::encrypt($item->id)]) }}" class='btn btn-light' role='button' aria-disabled='true'>Entrar na Fila</a></td> 
         </tr>
         @endforeach
 

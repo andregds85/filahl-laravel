@@ -149,7 +149,7 @@ session_destroy();
                   ?>
             <td>{{ $item->name }}</td>
             <td>{{ $item->position }}
-            <a  href="{{ url('vfila', ['id' => Crypt::encrypt($item->id)]) }}" class='btn btn-light'  role='button' aria-disabled='true'>Prosseg Viagem</a></td> 
+            <a  href="{{ url('vfila', ['id' => Crypt::encrypt($item->id)]) }}" class='btn btn-light'  role='button' aria-disabled='true'>Sair da Fila</a></td> 
         </tr>
 
 
