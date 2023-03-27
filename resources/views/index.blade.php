@@ -121,7 +121,6 @@ session_destroy();
                 } 
 
 
-
                  if (($color > 5 ) and ($color < 8 )){
                   ?>    
                   <td bgcolor="yellow"><font color="black"> <?php echo $color; ?>  </font></td> <?php
@@ -129,12 +128,22 @@ session_destroy();
                     } 
 
 
-                    if (($color > 7 ) and ($color < 13 )){
+
+                    if (($color > 7 ) and ($color < 11 )){
                       ?>    
                       <td bgcolor="blue"><font color="white"> <?php echo $color; ?>  </font></td> <?php
         
                         } 
                         
+
+                   
+
+                    if (($color > 10 ) and ($color < 13 )){
+                      ?>    
+                      <td bgcolor="33A8FF"><font color="white"> <?php echo $color; ?>  </font></td> <?php
+        
+                        } 
+
 
                         if ($color > 12 ) {
                           ?>    
@@ -142,46 +151,19 @@ session_destroy();
             
                             } 
 
-
-
-
+                            
 
                   ?>
-            <td>{{ $item->name }}</td>
-            <td>{{ $item->position }}
+            <td align="Center"><h3>{{ $item->name }}</h3></td>
+            <td>
             <a  href="{{ url('vfila', ['id' => Crypt::encrypt($item->id)]) }}" class='btn btn-light'  role='button' aria-disabled='true'>Sair da Fila</a></td> 
         </tr>
-
-
-
-
-
-
-
-
 
 
         @endforeach
 
         </table>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
