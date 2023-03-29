@@ -10,12 +10,10 @@ use App\Models\Carros;
 
  $position='100000';
 
-
  Carros::where('id', $id1)->update(['position' => $position]);  
 ?>
 
 <script>  alert("Sai da Fila com Sucesso"); </script>
-
 
 <?php  
 echo redirect('/')  

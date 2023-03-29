@@ -25,6 +25,10 @@ Route::get('/voltar', function () {
 });
 
 
+Route::get('/notifica', function () {
+    return view('notifica');
+});
+
 
 Route::get('/vgobackconfirma', function () {
     return view('vgobackconfirma');

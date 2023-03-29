@@ -30,7 +30,7 @@ $_SESSION['id']=$id1;
     SIM
   </div>
   <div class="card-body">
-    <h5 class="card-title">SIM TENHO CERTEZA, VOU VOLTAR PARA A FILA  </h5>
+    <h5 class="card-title">"SIM TENHO CERTEZA" </h5>
     <a href="{{ url('/vgobackconfirma') }}" class="btn btn-primary">SIM</a>
   </div>
 </div>
@@ -42,7 +42,7 @@ $_SESSION['id']=$id1;
     NÃO
   </div>
   <div class="card-body">
-    <h5 class="card-title">NÃO!,  VOU CONTINUAR FORA DA FILA</h5>
+    <h5 class="card-title">"NÃO! ,  VOU CONTINUAR FORA DA FILA "</h5>
     <a href="{{ url('/voltar') }}" class="btn btn-primary">NÃO</a>
   </div>
 </div>

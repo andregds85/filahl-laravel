@@ -3,7 +3,6 @@ session_start();
 session_destroy();
 ?>
 
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -36,6 +35,11 @@ session_destroy();
             
       <li class="nav-item">
         <a class="nav-link" href="{{ url('/voltar') }}">Fora da Fila </a>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url('/notifica') }}">Notifica </a>
       </li>
 
     </ul>
@@ -109,49 +113,34 @@ session_destroy();
     </tr>
   </thead>
 
-
   @foreach($tabela2 as $item)
 	    <tr> 
      <?php $color=++$i; ?>  
  
-               <?php if ($color < 6 ){
+            <?php if ($color < 6 ){
               ?>    
               <td bgcolor="green"> <font color="white"> <?php echo $color; ?>  </font></td>  <?php
-
                 } 
-
-
                  if (($color > 5 ) and ($color < 8 )){
                   ?>    
                   <td bgcolor="yellow"><font color="black"> <?php echo $color; ?>  </font></td> <?php
-    
                     } 
 
-
-
-                    if (($color > 7 ) and ($color < 11 )){
+                     if (($color > 7 ) and ($color < 11 )){
                       ?>    
                       <td bgcolor="blue"><font color="white"> <?php echo $color; ?>  </font></td> <?php
-        
-                        } 
-                        
-
-                   
-
-                    if (($color > 10 ) and ($color < 13 )){
-                      ?>    
-                      <td bgcolor="33A8FF"><font color="white"> <?php echo $color; ?>  </font></td> <?php
-        
-                        } 
-
-
-                        if ($color > 12 ) {
+                       } 
+                  
+                         if (($color > 10 ) and ($color < 13 )){
                           ?>    
-                          <td>  <?php echo $color; ?>  </td> <?php
-            
-                            } 
+                            <td bgcolor="33A8FF"><font color="white"> <?php echo $color; ?>  </font></td> <?php
+                             } 
 
-                            
+                              if ($color > 12 ) {
+                               ?>    
+                               <td>  <?php echo $color; ?>  </td> <?php
+            
+                                 } 
 
                   ?>
             <td align="Center"><h3>{{ $item->name }}</h3></td>
@@ -159,13 +148,10 @@ session_destroy();
             <a  href="{{ url('vfila', ['id' => Crypt::encrypt($item->id)]) }}" class='btn btn-light'  role='button' aria-disabled='true'>Sair da Fila</a></td> 
         </tr>
 
-
         @endforeach
 
         </table>
 </div>
-
-
 
 
 

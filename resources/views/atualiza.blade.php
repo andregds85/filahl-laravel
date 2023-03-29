@@ -17,10 +17,8 @@ $_SESSION['id']=$id1;
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Aeroporto</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
 </head>
 <body>
-
 
 
 
@@ -33,7 +31,7 @@ $_SESSION['id']=$id1;
     SIM
   </div>
   <div class="card-body">
-    <h5 class="card-title">SIM TENHO CERTEZA </h5>
+    <h5 class="card-title">"SIM, TENHO CERTEZA" </h5>
     <a href="{{ url('/validafila') }}" class="btn btn-primary">SIM</a>
 
   </div>
@@ -45,7 +43,7 @@ $_SESSION['id']=$id1;
     NÃO
   </div>
   <div class="card-body">
-    <h5 class="card-title">NÃO VOU CONTINUAR NA MESMA POSIÇÃO</h5>
+    <h5 class="card-title">"NÃO, VOU CONTINUAR NA MESMA POSIÇÃO"</h5>
     <a href="{{ url('/') }}" class="btn btn-primary">NÃO</a>
   </div>
 </div>

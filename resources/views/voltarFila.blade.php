@@ -85,8 +85,8 @@
 </div>
 
 
-<?php
 
+<?php
     use App\Models\Carros;
     $tabela = carros::all();
     $tabela1= $tabela=carros::where('position', '100000')->orderBy('name', 'asc')->get();
@@ -103,7 +103,7 @@
 
   <thead>
     <tr>
-      <th scope="col">Posição</th>
+      <th scope="col"></th>
       <th scope="col">Carros</th>
       <th scope="col"><button onClick="window.location.reload();">Atualizar</button>
 </th>
@@ -115,8 +115,8 @@
   @foreach($tabela1 as $item)
 	    <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $item->name }}</td>
-            <td>{{ $item->position }}
+            <td align="Center"><h3>{{ $item->name }}</h3></td>
+                        <td>
             <a  href="{{ url('vgoback', ['id' => Crypt::encrypt($item->id)]) }}" class='btn btn-light' role='button' aria-disabled='true'>Entrar na Fila</a></td> 
         </tr>
         @endforeach
